@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { storeEmail } from '../actions';
 import './Login.css';
+import trybeWallet from '../images/trybeWallet.png';
 
 class Login extends React.Component {
   constructor() {
@@ -41,7 +42,7 @@ class Login extends React.Component {
     const { saveEmail } = this.props;
     return (
       <div className="login-container">
-        <h2>LOGIN</h2>
+        <img src={ trybeWallet } alt="trybewallet" />
         <input
           type="text"
           data-testid="email-input"
@@ -66,7 +67,8 @@ class Login extends React.Component {
             Entrar
           </button>
         </Link>
-      </div>);
+      </div>
+    );
   }
 }
 

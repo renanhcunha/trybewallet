@@ -1,5 +1,34 @@
 .login-container{
+  border: 1px solid black;
+  border-radius: 10%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 200px auto;
+  padding: 40px;
+  text-align: center;
+  width: 260px;
+}
+
+.login-container img{
+  margin-bottom: 25px;
+}
+
+.login-container input{
+  border: 2px groove rgba(128, 128, 128, 0.48);
+  font-size: 18px;
+  padding: 5px;
+  text-align: center;
+}
+
+.login-container button {
+  background-color: rgb(46, 139, 87, 0.87);
+  border: none;
+  border-radius: 5%;
+  color: white;
+  font-size: 18px;
+  padding: 10px 25px;
+}
+
+.login-container button:hover {
+  cursor: pointer;
 }

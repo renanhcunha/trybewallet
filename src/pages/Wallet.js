@@ -6,6 +6,7 @@ import Table from '../components/Table';
 import awesomeAPI from '../services/awesomeAPI';
 import { editExpense, fetchExchangeRatesAndStoreExpenses } from '../actions';
 import './Wallet.css';
+import Header from '../components/Header';
 
 class Wallet extends React.Component {
   constructor() {
@@ -106,13 +107,7 @@ class Wallet extends React.Component {
 
     return (
       <div className="wallet-container">
-        <header className="wallet-header">
-          <p data-testid="email-field">{`Email:  ${email}`}</p>
-          <div>
-            <span data-testid="total-field">{`Despesa Total: ${totalValue} `}</span>
-            <span data-testid="header-currency-field">BRL</span>
-          </div>
-        </header>
+        <Header email={ email } totalValue={ totalValue } />
         <section className="wallet-form">
           <Form
             currencyList={ currencyList }
