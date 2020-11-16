@@ -1,4 +1,24 @@
 .table-container{
   border-spacing: 10px;
+  margin: 0 auto;
   text-align: center;
+  width: 1000px;
+}
+
+tr {
+  width: 1000px;
+  border: 1px solid #000;
+}
+
+th.description, td.description {
+  overflow-wrap: anywhere;
+  width: 20%;
+}
+
+td.button-container {
+  width: 15%;
+}
+
+.edit-button {
+  margin-right: 5px;
 }

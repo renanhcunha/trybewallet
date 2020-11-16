@@ -11,7 +11,7 @@ class Table extends Component {
       <table className="table-container">
         <thead>
           <tr>
-            <th>Descrição</th>
+            <th className="description">Descrição</th>
             <th>Tag</th>
             <th>Método de pagamento</th>
             <th>Valor</th>
@@ -28,7 +28,7 @@ class Table extends Component {
             const roundValue = (value) => Math.round(value * 100) / 100;
             return (
               <tr key={ expense.id }>
-                <td>{expense.description}</td>
+                <td className="description">{expense.description}</td>
                 <td>{expense.tag}</td>
                 <td>{expense.method}</td>
                 <td>{expense.value}</td>
@@ -36,20 +36,21 @@ class Table extends Component {
                 <td>{roundValue(exchanteRate.ask).toFixed(2)}</td>
                 <td>{roundValue(expense.value * exchanteRate.ask)}</td>
                 <td>Real</td>
-                <td>
+                <td className="button-container">
                   <button
                     type="button"
                     data-testid="edit-btn"
+                    className="edit-button"
                     onClick={ () => handleEditClick(expense) }
                   >
-                    Edit
+                    Editar
                   </button>
                   <button
                     type="button"
                     data-testid="delete-btn"
                     onClick={ () => deleteExpenseFromStore(expense) }
                   >
-                    Delete
+                    Excluir
                   </button>
                 </td>
               </tr>

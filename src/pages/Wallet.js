@@ -5,6 +5,7 @@ import Form from '../components/Form';
 import Table from '../components/Table';
 import awesomeAPI from '../services/awesomeAPI';
 import { editExpense, fetchExchangeRatesAndStoreExpenses } from '../actions';
+import './Wallet.css';
 
 class Wallet extends React.Component {
   constructor() {
@@ -14,11 +15,11 @@ class Wallet extends React.Component {
       currencyList: [],
       expenses: {
         id: 0,
-        value: '0',
+        value: '',
         description: '',
-        currency: 'USD',
-        method: 'Dinheiro',
-        tag: 'Alimentação',
+        currency: '',
+        method: '',
+        tag: '',
       },
       expensesBeforeEdit: {},
     };
@@ -61,7 +62,7 @@ class Wallet extends React.Component {
         expenses: {
           ...prevState.expenses,
           id: prevState.expenses.id + 1,
-          value: 0,
+          value: '',
           description: '',
           currency: 'USD',
           method: 'Dinheiro',
@@ -104,13 +105,15 @@ class Wallet extends React.Component {
     const totalValue = this.updateTotalValue();
 
     return (
-      <div>
-        <header>
+      <div className="wallet-container">
+        <header className="wallet-header">
           <p data-testid="email-field">{`Email:  ${email}`}</p>
-          <span data-testid="total-field">{`Despesa Total: ${totalValue} `}</span>
-          <span data-testid="header-currency-field">BRL</span>
+          <div>
+            <span data-testid="total-field">{`Despesa Total: ${totalValue} `}</span>
+            <span data-testid="header-currency-field">BRL</span>
+          </div>
         </header>
-        <section>
+        <section className="wallet-form">
           <Form
             currencyList={ currencyList }
             expenses={ expenses }
